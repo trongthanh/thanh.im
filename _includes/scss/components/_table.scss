@@ -11,7 +11,7 @@ article {
 		width: 100%;
 		max-width: 100%;
 		border-collapse: collapse;
-		font-size: get-size(400);
+		font-size: 1.1rem;
 		line-height: 1.6;
 		margin: get-size(600) 0;
 
@@ -42,9 +42,7 @@ article {
 	th {
 		font-family: var(--font-sans, #{map-get(map-get($tokens, 'fonts'), 'sans')});
 		font-weight: 700;
-		font-size: get-size(300);
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
+		font-size: 1.1rem;
 		text-align: left;
 		padding: get-size(400) get-size(400);
 		color: var(--color-theme-primary);
