@@ -1,4 +1,3 @@
-/* eslint-disable no-bitwise */
 export default {
 	get years() {
 		const thisYear = new Date().getFullYear();

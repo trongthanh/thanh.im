@@ -48,7 +48,7 @@ export default async function(content, outputPath) {
 								// I'll consider go back to `image-size` if needed and use a single neutral color
 								// const getSize = require('image-size');
 								// dimensions = getSize('./' + file);
-							} catch (err) {
+							} catch {
 								console.log('Cannot getImageInfo', file);
 							}
 
