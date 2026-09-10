@@ -30,10 +30,14 @@
   {% endblock %}
 </head>
 <body>
+  {% if not hideHeader and not hideSiteHead %}
   {% include "partials/global/site-head.njk" %}
+  {% endif %}
   {% block content %}
   {% endblock content %}
+  {% if not hideFooter and not hideSiteFoot %}
   {% include "partials/global/site-foot.njk" %}
+  {% endif %}
   {% block foot %}
   {% endblock %}
   <script type="module" src="/js/components/theme-toggle.js" async defer></script>

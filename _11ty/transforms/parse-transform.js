@@ -8,6 +8,8 @@ const solidImgReg = /\.(jpg|jpeg)/i;
 
 export default async function(content, outputPath) {
 	if (outputPath.endsWith('.html')) {
+		// Eleventy 3 transform context: source template path, for resolving relative image srcs
+		const templateInputPath = this.page && this.page.inputPath;
 		const DOM = new JSDOM(content);
 
 		const document = DOM.window.document;
@@ -34,7 +36,13 @@ export default async function(content, outputPath) {
 							// [red, green, blue, alpha, width, height]
 							let info = [127, 127, 127, 255, 50, 50];
 							try {
-								info = await getImageInfo(path.resolve('.' + file));
+								// absolute srcs (/images/...) live at site root, relative srcs (./img.png)
+								// live next to the source template
+								let imagePath = path.resolve('.' + file);
+								if (templateInputPath && !path.isAbsolute(file)) {
+									imagePath = path.resolve(path.dirname(templateInputPath), file);
+								}
+								info = await getImageInfo(imagePath);
 								console.log('Processing image', file);
 								// this image processing maybe costly but OK for now,
 								// I'll consider go back to `image-size` if needed and use a single neutral color
