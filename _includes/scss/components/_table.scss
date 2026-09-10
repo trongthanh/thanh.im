@@ -1,0 +1,86 @@
+/* -----------------------------------------------
+ * TABLE STYLES
+ * -----------------------------------------------
+ * Elegant default table styling using the blog's
+ * design tokens (CSS custom properties).
+ */
+
+.post__body,
+article {
+	table {
+		width: 100%;
+		max-width: 100%;
+		border-collapse: collapse;
+		font-size: get-size(400);
+		line-height: 1.6;
+		margin: get-size(600) 0;
+
+		/* Horizontal scroll on small screens */
+		display: block;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+
+		@include media-query('md') {
+			display: table;
+		}
+	}
+
+	caption {
+		font-family: var(--font-sans, #{map-get(map-get($tokens, 'fonts'), 'sans')});
+		font-size: get-size(300);
+		font-weight: 600;
+		text-align: left;
+		padding: get-size(300) get-size(400);
+		color: var(--color-text-glare, var(--color-text));
+		caption-side: bottom;
+	}
+
+	thead {
+		border-bottom: 2px solid var(--color-theme-primary);
+	}
+
+	th {
+		font-family: var(--font-sans, #{map-get(map-get($tokens, 'fonts'), 'sans')});
+		font-weight: 700;
+		font-size: get-size(300);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		text-align: left;
+		padding: get-size(400) get-size(400);
+		color: var(--color-theme-primary);
+		white-space: nowrap;
+	}
+
+	tbody {
+		tr {
+			border-bottom: 1px solid var(--color-stroke);
+
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+
+	td {
+		padding: get-size(400) get-size(400);
+		vertical-align: top;
+	}
+
+	/* Subtle alternating row background */
+	tbody tr:nth-child(even) {
+		background-color: var(--color-theme-highlight-block);
+	}
+
+	/* Hover effect for better readability */
+	tbody tr:hover {
+		background-color: var(--color-theme-highlight);
+	}
+
+	/* Code inside tables — keep inline code compact */
+	td code,
+	th code {
+		font-size: 0.85em;
+		white-space: normal;
+		word-break: break-word;
+	}
+}
