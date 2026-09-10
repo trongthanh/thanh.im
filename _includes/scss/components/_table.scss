@@ -66,14 +66,9 @@ article {
 		vertical-align: top;
 	}
 
-	/* Subtle alternating row background */
+	/* Very subtle alternating row background */
 	tbody tr:nth-child(even) {
-		background-color: var(--color-theme-highlight-block);
-	}
-
-	/* Hover effect for better readability */
-	tbody tr:hover {
-		background-color: var(--color-theme-highlight);
+		background-color: rgba(0, 0, 0, 0.035);
 	}
 
 	/* Code inside tables — keep inline code compact */
