@@ -45,6 +45,7 @@ export default function (config) {
 	config.addPassthroughCopy('./js');
 	// co-located page assets (e.g. python_class/week_7_homework/*.png)
 	config.addPassthroughCopy('./python_class/**/*.png');
+	config.addPassthroughCopy('./python_class/**/*.zip');
 	config.addPassthroughCopy('./robots.txt');
 	config.addPassthroughCopy('node_modules/nunjucks/browser/nunjucks-slim.js');
 	// submodule pass through
