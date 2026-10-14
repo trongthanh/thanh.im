@@ -1,3 +1,5 @@
+@use "../stalfos/functions/get-size";
+
 .intro {
 	position: relative;
 	background: var(--color-theme-highlight-block);
@@ -11,8 +13,8 @@
 	}
 
 	&__summary {
-		--flow-space: #{get-size(500)};
-		font-size: get-size(500);
+		--flow-space: #{get-size.get-size(500)};
+		font-size: get-size.get-size(500);
 
 		a {
 			color: currentColor;

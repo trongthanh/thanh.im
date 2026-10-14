@@ -1,3 +1,5 @@
+@use "../stalfos/mixins/media-query";
+
 .video-player {
 	position: relative;
 	padding-top: 56.25%;
@@ -15,7 +17,7 @@
 		padding-top: 63%;
 	}
 
-	@include media-query('md') {
+	@include media-query.media-query('md') {
 		.post & {
 			padding-top: 66%;
 		}

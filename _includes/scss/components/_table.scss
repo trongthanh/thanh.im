@@ -1,3 +1,8 @@
+@use "sass:map";
+@use "../stalfos/functions/get-size";
+@use "../stalfos/mixins/media-query";
+@use "../tokens";
+
 /* -----------------------------------------------
  * TABLE STYLES
  * -----------------------------------------------
@@ -13,24 +18,24 @@ article {
 		border-collapse: collapse;
 		font-size: 1.1rem;
 		line-height: 1.6;
-		margin: get-size(600) 0;
+		margin: get-size.get-size(600) 0;
 
 		/* Horizontal scroll on small screens */
 		display: block;
 		overflow-x: auto;
 		-webkit-overflow-scrolling: touch;
 
-		@include media-query('md') {
+		@include media-query.media-query('md') {
 			display: table;
 		}
 	}
 
 	caption {
-		font-family: var(--font-sans, #{map-get(map-get($tokens, 'fonts'), 'sans')});
-		font-size: get-size(300);
+		font-family: var(--font-sans, #{map.get(map.get(tokens.$tokens, 'fonts'), 'sans')});
+		font-size: get-size.get-size(300);
 		font-weight: 600;
 		text-align: left;
-		padding: get-size(300) get-size(400);
+		padding: get-size.get-size(300) get-size.get-size(400);
 		color: var(--color-text-glare, var(--color-text));
 		caption-side: bottom;
 	}
@@ -40,11 +45,11 @@ article {
 	}
 
 	th {
-		font-family: var(--font-sans, #{map-get(map-get($tokens, 'fonts'), 'sans')});
+		font-family: var(--font-sans, #{map.get(map.get(tokens.$tokens, 'fonts'), 'sans')});
 		font-weight: 700;
 		font-size: 1.1rem;
 		text-align: left;
-		padding: get-size(400) get-size(400);
+		padding: get-size.get-size(400) get-size.get-size(400);
 		color: var(--color-theme-primary);
 		white-space: nowrap;
 	}
@@ -60,7 +65,7 @@ article {
 	}
 
 	td {
-		padding: get-size(400) get-size(400);
+		padding: get-size.get-size(400) get-size.get-size(400);
 		vertical-align: top;
 	}
 

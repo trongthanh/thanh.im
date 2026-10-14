@@ -1,4 +1,6 @@
-@import 'tokens';
+@use "sass:map";
+@use "sass:math";
+@use 'tokens';
 
 /**
  * SIZE SCALE
@@ -6,14 +8,14 @@
  * it is relevant for (font-size, margin, padding). All items are
  * calcuated off these tokens.
  */
-$stalfos-size-scale: map-get($tokens, 'size-scale');
+$stalfos-size-scale: map.get(tokens.$tokens, 'size-scale');
 
 /**
  * COLORS
  * Colors are shared between backgrounds and text by default.
  * You can also use them to power borders, fills or shadows, for example.
  */
-$stalfos-colors: map-get($tokens, 'colors');
+$stalfos-colors: map.get(tokens.$tokens, 'colors');
 
 /**
  * UTIL PREFIX
@@ -69,7 +71,7 @@ $stalfos-config: (
 		'property': 'display',
 	),
 	'font': (
-		'items': map-get($tokens, 'fonts'),
+		'items': map.get(tokens.$tokens, 'fonts'),
 		'output': 'standard',
 		'property': 'font-family',
 	),
@@ -163,15 +165,15 @@ $stalfos-config: (
 	'width': (
 		'items': (
 			'full': '100%',
-			'half': percentage(0.5),
-			'quarter': percentage(0.25),
-			'third': percentage(0.333333),
+			'half': math.percentage(0.5),
+			'quarter': math.percentage(0.25),
+			'third': math.percentage(0.333333),
 		),
 		'output': 'responsive',
 		'property': 'width',
 	),
 	'breakpoints': (
-		'md': #{'(min-width: ' + map-get($metrics, 'md-breakpoint') + ')'},
+		'md': #{'(min-width: ' + map.get($metrics, 'md-breakpoint') + ')'},
 	),
 	'utilities': (
 		'reset': 'on',

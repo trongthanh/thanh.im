@@ -2,9 +2,9 @@
 
 // Import the default config as the fallback for if
 // the user hasn't yet set a config for their project
-@import 'default-config';
+@use 'default-config';
 
-@import 'functions/functions';
-@import 'utilities/utilities';
-@import 'mixins/mixins';
-@import 'generator/generator';
+@use 'functions/functions';
+@use 'utilities/utilities';
+@use 'mixins/mixins';
+@use 'generator/generator';

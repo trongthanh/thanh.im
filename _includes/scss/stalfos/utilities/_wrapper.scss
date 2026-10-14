@@ -1,3 +1,7 @@
+@use "../../config";
+@use "../default-config";
+@use "../functions/get-config-value";
+
 /**
  * WRAPPER UTILITY
  * A handy container util that sets a max-width and centers itself, using auto margin.
@@ -7,9 +11,9 @@
 
 // Config items
 $stalfos-utility-wrapper__max-width: 70rem !default;
-$stalfos-utility-wrapper__gutter: $stalfos-base-size !default;
-$stalfos-utility-wrapper__enabled: get-config-value('wrapper', 'utilities') !default;
-$stalfos-utility-wrapper__prefix: $stalfos-util-prefix !default;
+$stalfos-utility-wrapper__gutter: default-config.$stalfos-base-size !default;
+$stalfos-utility-wrapper__enabled: get-config-value.get-config-value('wrapper', 'utilities') !default;
+$stalfos-utility-wrapper__prefix: config.$stalfos-util-prefix !default;
 $stalfos-utility-wrapper__block: 'wrapper';
 
 // Block starts if enabled in your `$stalfos-config`

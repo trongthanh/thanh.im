@@ -1,3 +1,4 @@
+@use "sass:color";
 $tokens: (
   size-scale: (
     100: 0.25rem,
@@ -17,7 +18,7 @@ $tokens: (
     primary: #173854,
     primary-shade: #102538,
     primary-glare: #22547c,
-    highlight: lighten(#1177cc, 45%),
+    highlight: color.adjust(#1177cc, $lightness: 45%),
     light: #ffffff,
     mid: #cccccc,
     dark: #333333,

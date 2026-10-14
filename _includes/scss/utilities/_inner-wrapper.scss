@@ -1,7 +1,11 @@
+@use "sass:map";
+@use "../config";
+@use "../stalfos/functions/get-size";
+
 .inner-wrapper {
-	max-width: map-get($metrics, 'wrap-inner-max-width');
+	max-width: map.get(config.$metrics, 'wrap-inner-max-width');
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: get-size(500);
-	padding-right: get-size(500);
+	padding-left: get-size.get-size(500);
+	padding-right: get-size.get-size(500);
 }

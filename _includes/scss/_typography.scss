@@ -1,43 +1,47 @@
+@use "stalfos/functions/get-size";
+@use "stalfos/mixins/apply-utility";
+@use "stalfos/mixins/media-query";
+
 body {
 	// Strip the unit off the size ratio to generate a line height
-	$line-height: get-size(600);
+	$line-height: get-size.get-size(600);
 	line-height: div($line-height, ($line-height * 0 + 1));
 
-	@include apply-utility('font', 'base');
+	@include apply-utility.apply-utility('font', 'base');
 }
 
 h1,
 h2,
 h3 {
-	@include apply-utility('font', 'sans');
+	@include apply-utility.apply-utility('font', 'sans');
 }
 
 h1 {
-	font-size: get-size(700);
+	font-size: get-size.get-size(700);
 }
 
 h2 {
-	font-size: get-size(600);
+	font-size: get-size.get-size(600);
 }
 
 h3 {
-	font-size: get-size(500);
+	font-size: get-size.get-size(500);
 }
 
 code {
-	@include apply-utility('font', 'mono');
+	@include apply-utility.apply-utility('font', 'mono');
 }
 
-@include media-query('md') {
+@include media-query.media-query('md') {
 	h1 {
-		font-size: get-size(900);
+		font-size: get-size.get-size(900);
 	}
 
 	h2 {
-		font-size: get-size(800);
+		font-size: get-size.get-size(800);
 	}
 
 	h3 {
-		font-size: get-size(700);
+		font-size: get-size.get-size(700);
 	}
 }

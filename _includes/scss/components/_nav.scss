@@ -1,3 +1,6 @@
+@use "../stalfos/functions/get-size";
+@use "../stalfos/mixins/apply-utility";
+
 .nav {
 	&__list {
 		overflow-x: auto;
@@ -13,18 +16,18 @@
 		}
 
 		> * + * {
-			margin-left: get-size(500);
+			margin-left: get-size.get-size(500);
 		}
 	}
 
 	&__item {
-		padding: get-size(300) 0;
+		padding: get-size.get-size(300) 0;
 		flex-shrink: 0;
 
 		a {
 			color: currentColor;
 
-			@include apply-utility('weight', 'mid');
+			@include apply-utility.apply-utility('weight', 'mid');
 
 			&:not(:hover) {
 				text-decoration: none;

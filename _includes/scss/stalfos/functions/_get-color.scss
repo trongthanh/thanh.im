@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "../default-config";
+
 /**
  * GET COLOR FUNCTION
  *
@@ -7,7 +10,7 @@
  * @param {string} $key - The color that you want to get 
  */
 @function get-color($key) {
-  $response: map-get($stalfos-colors, $key);
+  $response: map.get(default-config.$stalfos-colors, $key);
 
   @if ($response) {
     @return $response;

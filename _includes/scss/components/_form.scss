@@ -1,3 +1,5 @@
+@use "../stalfos/mixins/apply-utility";
+
 /* Form */
 
 form {
@@ -28,7 +30,7 @@ select {
 	padding: 0.5rem 1rem;
 	width: 100%;
 
-	@include apply-utility('font', 'base');
+	@include apply-utility.apply-utility('font', 'base');
 }
 
 label input {

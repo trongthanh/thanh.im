@@ -1,3 +1,6 @@
+@use "../../config";
+@use "../functions/get-config-value";
+
 /**
  * ICON UTILITY
  * A handy little utility that by default, sets your icons to 1em, width and height. 
@@ -7,8 +10,8 @@
 
 // Config items
 $stalfos-utility-icon__size: 1em !default;
-$stalfos-utility-icon__enabled: get-config-value('icon', 'utilities') !default;
-$stalfos-utility-icon__prefix: $stalfos-util-prefix !default;
+$stalfos-utility-icon__enabled: get-config-value.get-config-value('icon', 'utilities') !default;
+$stalfos-utility-icon__prefix: config.$stalfos-util-prefix !default;
 $stalfos-utility-icon__block: 'icon';
 
 // Block starts if enabled in your `$stalfos-config`

@@ -1,6 +1,8 @@
+@use "../stalfos/functions/get-size";
+
 .post-list {
 	&__item {
-		--flow-space: #{get-size(700)};
+		--flow-space: #{get-size.get-size(700)};
 	}
 
 	&__link {
@@ -17,16 +19,16 @@
 }
 
 .tags {
-	margin-left: -#{get-size(300)};
-	margin-right: -#{get-size(300)};
+	margin-left: -#{get-size.get-size(300)};
+	margin-right: -#{get-size.get-size(300)};
 
 	&__item {
 		display: inline-block;
 		background: var(--color-theme-highlight-block);
-		margin: #{get-size(200) get-size(300)};
+		margin: #{get-size.get-size(200) get-size.get-size(300)};
 
 		a {
-			padding: #{get-size(100) get-size(300)};
+			padding: #{get-size.get-size(100) get-size.get-size(300)};
 			display: block;
 			color: var(--color-theme-primary);
 			text-decoration: none;

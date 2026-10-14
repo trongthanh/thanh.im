@@ -1,9 +1,11 @@
+@use "../stalfos/functions/get-size";
+
 .button {
 	display: inline-block;
 	border: none;
 	background-color: var(--color-action-bg);
 	color: var(--color-action-text);
-	padding: get-size(300) get-size('base');
+	padding: get-size.get-size(300) get-size.get-size('base');
 	line-height: 1;
 	margin: 0;
 	text-decoration: none;

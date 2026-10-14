@@ -1,3 +1,6 @@
+@use "../../config";
+@use "../functions/get-config-value";
+
 /**
  * FLOW UTILITY
  * Add space between sibling elements in a (default selector) .sf-flow parent. 
@@ -9,8 +12,8 @@
 
 // Config items
 $stalfos-utility-flow__space: 1em !default;
-$stalfos-utility-flow__enabled: get-config-value('flow', 'utilities') !default;
-$stalfos-utility-flow__prefix: $stalfos-util-prefix !default;
+$stalfos-utility-flow__enabled: get-config-value.get-config-value('flow', 'utilities') !default;
+$stalfos-utility-flow__prefix: config.$stalfos-util-prefix !default;
 $stalfos-utility-flow__block: 'flow';
 
 // Block starts if enabled in your `$stalfos-config`

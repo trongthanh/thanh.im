@@ -6,10 +6,11 @@
  * @param {string} $prefix - An optional prefix that is stuck to the front of selectors
  * @param {bool} $is-breakpoint - A flag for the responsive generation to use to determine wether to run or not
  */
-@import 'process-collection';
+@use 'process-collection';
+@use "../../default-config";
 
 @mixin cycle($prefix, $is-breakpoint) {
-  @each $selector, $props in $stalfos-config {
-    @include process-collection($props, $prefix, $selector, $is-breakpoint);
+  @each $selector, $props in default-config.$stalfos-config {
+    @include process-collection.process-collection($props, $prefix, $selector, $is-breakpoint);
   }
 }

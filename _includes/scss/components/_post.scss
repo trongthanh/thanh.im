@@ -1,13 +1,19 @@
+@use "sass:map";
+@use "../utilities/visually-hidden";
+@use "../config";
+@use "../stalfos/functions/get-size";
+@use "../stalfos/mixins/apply-utility";
+
 .post {
 	&__body {
-		--flow-space: #{get-size(800)};
+		--flow-space: #{get-size.get-size(800)};
 
 		/**
 		 * Generic HTML styles
 		 */
 		h2 + *,
 		h3 + * {
-			--flow-space: #{get-size(500)};
+			--flow-space: #{get-size.get-size(500)};
 		}
 
 		h2,
@@ -15,7 +21,7 @@
 			position: relative;
 			/*display: flex;*/
 
-			@include apply-utility('leading', 'tight');
+			@include apply-utility.apply-utility('leading', 'tight');
 		}
 
 		h2, h3, h4 {
@@ -34,7 +40,7 @@
 			text-decoration: underline;
 			word-break: break-word;
 
-			@include apply-utility('leading', 'tight');
+			@include apply-utility.apply-utility('leading', 'tight');
 		}
 
 		a:not([class]):hover {
@@ -61,21 +67,21 @@
 		blockquote {
 			border-left: 0.4rem solid var(--color-theme-primary-glare);
 			margin-left: 0;
-			padding-left: get-size(500);
+			padding-left: get-size.get-size(500);
 			font-style: italic;
 
 			p {
 				opacity: 0.85;
-				padding: get-size(500) 0;
+				padding: get-size.get-size(500) 0;
 			}
 		}
 
 		ol:not([class]),
 		ul:not([class]) {
-			margin-left: get-size(800);
+			margin-left: get-size.get-size(800);
 
 			li + li {
-				margin-top: get-size(300);
+				margin-top: get-size.get-size(300);
 			}
 		}
 
@@ -84,7 +90,7 @@
 		.video-player,
 		video {
 			width: 100vw;
-			max-width: map-get($metrics, 'wrap-max-width');
+			max-width: map.get(config.$metrics, 'wrap-max-width');
 			margin-left: 50%; /*changing this value to 47% removes the horizontal scrollbar once the viewport is < 930px */
 			transform: translateX(
 				-50%
@@ -113,15 +119,15 @@
 		figcaption {
 			font-size: 0.8em;
 			font-style: italic;
-			max-width: map-get($metrics, 'wrap-inner-max-width');
+			max-width: map.get(config.$metrics, 'wrap-inner-max-width');
 			margin: 0.5rem auto 0 auto;
-			padding: 0 get-size(500);
+			padding: 0 get-size.get-size(500);
 		}
 
 		pre > code {
 			display: block;
 			background: var(--color-dark);
-			padding: get-size(700);
+			padding: get-size.get-size(700);
 			font-size: 0.8em;
 		}
 
@@ -201,12 +207,12 @@
 
 		h2 {
 			flex-shrink: 0;
-			margin-right: get-size('base');
+			margin-right: get-size.get-size('base');
 			color: var(--color-dark);
 		}
 
 		h2 a {
-			@extend %visually-hidden;
+			@include visually-hidden.visually-hidden;
 		}
 
 		a {

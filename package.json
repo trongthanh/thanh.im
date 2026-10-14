@@ -13,6 +13,7 @@
 		"fast-average-color": "^9.4.0",
 		"html-minifier-terser": "^7.2.0",
 		"jsdom": "^30.0.0",
+		"markdown-it": "^14.3.1",
 		"markdown-it-attrs": "^5.0.0",
 		"sass": "^1.49.4",
 		"semver": "^7.3.2",

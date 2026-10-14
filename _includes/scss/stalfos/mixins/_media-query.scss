@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "../default-config";
+
 /**
  * MEDIA QUERY MIXIN
  * Pass in the key of one of your breakpoints set in `$stalfos-config['breakpoints']`
@@ -6,8 +9,8 @@
  * @param {string} $key - The key of your configured breakpoint
  */
 @mixin media-query($key) {
-  $breakpoints: map-get($stalfos-config, 'breakpoints');
-  $matched-breakpoint: map-get($breakpoints, $key);
+  $breakpoints: map.get(default-config.$stalfos-config, 'breakpoints');
+  $matched-breakpoint: map.get($breakpoints, $key);
 
   @if not $matched-breakpoint {
     @warn #{ 'Breakpoint, ‘' + $key + '’ not found in `$stalfos-config`. Make sure it’s set in the ‘breakpoints’ section.' };

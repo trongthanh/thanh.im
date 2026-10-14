@@ -1,6 +1,6 @@
 // Reset should always be at the top
-@import 'reset';
+@use 'reset';
 
-@import 'icon';
-@import 'flow';
-@import 'wrapper';
+@use 'icon';
+@use 'flow';
+@use 'wrapper';

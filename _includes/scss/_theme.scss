@@ -1,42 +1,48 @@
+@use "sass:color";
+@use "sass:list";
+@use "mixins/dark-mode";
+@use "stalfos/default-config";
+@use "stalfos/functions/get-color";
+
 :root {
 	// Pull the tokens and generate custom props
-	@each $color in $stalfos-colors {
-		#{'--color-' + nth($color, 1)}: #{nth($color, 2)};
+	@each $color in default-config.$stalfos-colors {
+		#{'--color-' + list.nth($color, 1)}: #{list.nth($color, 2)};
 	}
 
 	// Set theme aliases
 	--color-mode: 'light';
-	--color-bg: #{get-color('light')};
-	--color-bg-glare: #{get-color('light')};
-	--color-text: #{get-color('dark')};
-	--color-text-glare: #{get-color('dark')};
-	--color-selection-text: #{get-color('dark')};
-	--color-selection-bg: #{get-color('highlight')};
-	--color-stroke: #{get-color('mid')};
-	--color-action-bg: #{get-color('primary')};
-	--color-action-text: #{get-color('light')};
-	--color-code: #{get-color('primary')};
-	--color-theme-primary: #{get-color('primary')};
-	--color-theme-primary-glare: #{get-color('primary-glare')};
-	--color-theme-highlight: #{get-color('highlight')};
-	--color-theme-highlight-block: #{get-color('highlight')};
+	--color-bg: #{get-color.get-color('light')};
+	--color-bg-glare: #{get-color.get-color('light')};
+	--color-text: #{get-color.get-color('dark')};
+	--color-text-glare: #{get-color.get-color('dark')};
+	--color-selection-text: #{get-color.get-color('dark')};
+	--color-selection-bg: #{get-color.get-color('highlight')};
+	--color-stroke: #{get-color.get-color('mid')};
+	--color-action-bg: #{get-color.get-color('primary')};
+	--color-action-text: #{get-color.get-color('light')};
+	--color-code: #{get-color.get-color('primary')};
+	--color-theme-primary: #{get-color.get-color('primary')};
+	--color-theme-primary-glare: #{get-color.get-color('primary-glare')};
+	--color-theme-highlight: #{get-color.get-color('highlight')};
+	--color-theme-highlight-block: #{get-color.get-color('highlight')};
 }
 
-@include dark-mode() {
-	--color-bg: #{get-color('dark')};
-	--color-bg-glare: #{get-color('slate')};
-	--color-text: #{get-color('light')};
-	--color-selection-text: #{get-color('light')};
-	--color-selection-bg: #{get-color('primary-glare')};
-	--color-stroke: #{get-color('slate')};
-	--color-theme-primary: #{lighten(get-color('primary'), 50%)};
-	--color-theme-primary-glare: #{lighten(get-color('primary-glare'), 50%)};
+@include dark-mode.dark-mode() {
+	--color-bg: #{get-color.get-color('dark')};
+	--color-bg-glare: #{get-color.get-color('slate')};
+	--color-text: #{get-color.get-color('light')};
+	--color-selection-text: #{get-color.get-color('light')};
+	--color-selection-bg: #{get-color.get-color('primary-glare')};
+	--color-stroke: #{get-color.get-color('slate')};
+	--color-theme-primary: #{color.adjust(get-color.get-color('primary'), $lightness: 50%)};
+	--color-theme-primary-glare: #{color.adjust(get-color.get-color('primary-glare'), $lightness: 50%)};
 	--color-action-bg: var(--color-theme-primary-glare);
-	--color-action-text: #{get-color('dark')};
-	--color-code: #{get-color('highlight')};
-	--color-theme-highlight: #{get-color('highlight')};
-	--color-theme-highlight-block: #{get-color('slate')};
-	--color-theme-feature-text: #{get-color('highlight')};
+	--color-action-text: #{get-color.get-color('dark')};
+	--color-code: #{get-color.get-color('highlight')};
+	--color-theme-highlight: #{get-color.get-color('highlight')};
+	--color-theme-highlight-block: #{get-color.get-color('slate')};
+	--color-theme-feature-text: #{get-color.get-color('highlight')};
 }
 
 body {

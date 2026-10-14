@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "../default-config";
+
 /**
  * GET SIZE FUNCTION
  *
@@ -7,7 +10,7 @@
  * @param {string} $ratio-key - The size ratio that you want to get 
  */
 @function get-size($ratio-key) {
-  $response: map-get($stalfos-size-scale, $ratio-key);
+  $response: map.get(default-config.$stalfos-size-scale, $ratio-key);
 
   @if ($response) {
     @return $response;

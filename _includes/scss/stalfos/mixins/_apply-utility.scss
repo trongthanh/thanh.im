@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "../default-config";
+
 /**
  * APPLY UTILITY MIXIN
  * Grab the property and value of one of the $stalfos-config utilities
@@ -7,10 +10,10 @@
  * @param {string} $value-key - The value key that you are looking for within the utilty
  */
 @mixin apply-utility($key, $value-key) {
-  $utility: map-get($stalfos-config, $key);
-  $property: map-get($utility, 'property');
-  $items: map-get($utility, 'items');
-  $item-value: map-get($items, $value-key);
+  $utility: map.get(default-config.$stalfos-config, $key);
+  $property: map.get($utility, 'property');
+  $items: map.get($utility, 'items');
+  $item-value: map.get($items, $value-key);
 
   @if ($property and $item-value) {
     #{ $property }: #{$item-value};
