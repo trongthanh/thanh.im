@@ -1,6 +1,7 @@
 {
 	"name": "blog-int3ractive",
 	"version": "2.0.0",
+	"packageManager": "pnpm@12.4.0",
 	"description": "A simple Eleventy starter kit to help you have a blog of your own",
 	"type": "module",
 	"dependencies": {
@@ -18,6 +19,7 @@
 		"slugify": "^1.4.6"
 	},
 	"devDependencies": {
+		"@eslint/js": "^10.0.1",
 		"concurrently": "^10.0.0",
 		"cross-env": "^10.0.0",
 		"eslint": "^10.0.0",
@@ -25,12 +27,12 @@
 	},
 	"scripts": {
 		"sass": "sass _includes/scss/global.scss _site/css/global.css --style=compressed",
-		"dev": "concurrently \"npm run sass -- --watch\" \"npm run serve\"",
+		"dev": "concurrently \"pnpm run sass -- --watch\" \"pnpm run serve\"",
 		"serve": "cross-env ELEVENTY_ENV=development eleventy --incremental --serve",
 		"prestart": "rm -rf _site/",
-		"start": "npm run dev",
+		"start": "pnpm run dev",
 		"test": "eslint .",
-		"build": "npm run sass && npm test && eleventy && npm run build:sites",
+		"build": "pnpm run sass && pnpm test && pnpm exec eleventy && pnpm run build:sites",
 		"build:sites": "node scripts/build-static-sites.mjs"
 	},
 	"repository": {

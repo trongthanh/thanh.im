@@ -9,15 +9,15 @@ Personal blog at [int3ractive.com](https://int3ractive.com), built with **Eleven
 ## Commands
 
 ```shell
-npm install        # Install dependencies
-npm start          # Dev server with Sass watch + Eleventy watch + live reload
-npm run build      # Production build: sass + eslint + eleventy
-npm test           # Run ESLint only
+pnpm install       # Install dependencies
+pnpm start         # Dev server with Sass watch + Eleventy watch + live reload
+pnpm run build     # Production build: sass + eslint + eleventy + standalone sites
+pnpm test          # Run ESLint only
 ```
 
 - Dev server runs at `http://localhost:8080` with incremental builds.
-- `ELEVENTY_ENV=development` is set during `npm start`/`npm run dev`; HTML minification is disabled in dev mode.
-- `_site/` is the output directory (deleted on `npm start` via `prestart`).
+- `ELEVENTY_ENV=development` is set during `pnpm start`/`pnpm run dev`; HTML minification is disabled in dev mode.
+- `_site/` is the output directory (deleted on `pnpm start` via `prestart`).
 
 ## Architecture
 
