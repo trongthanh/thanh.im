@@ -27,6 +27,7 @@ npm test           # Run ESLint only
 - **Pages**: `*.md` / `pages/*.md` → compiled to their respective URLs
 - **Writing**: `writing/*.md` → separate long-form writing section
 - **Drafts**: `_drafts/` is ignored by Eleventy (`.eleventyignore`); front matter `draft: true` also suppresses a post from collections
+- **Standalone sites**: repos under `sites/` are Git submodules, ignored by Eleventy/ESLint, and built after Eleventy using `static-sites.json` plus `scripts/build-static-sites.mjs` into `_site/<slug>`
 
 ### Eleventy Configuration (`eleventy.config.js`)
 
@@ -51,7 +52,10 @@ npm test           # Run ESLint only
 /about/             → bio page
 /speaking/          → speaking page
 /slides/            → slides submodule
+/{site-slug}/       → independently built static app from `sites/{site-slug}`
 ```
+
+Netlify uses `netlify.toml` to initialize submodules, run `pnpm run build`, and publish `_site`. To add a standalone site, add its submodule under `sites/`, add install/build commands to `static-sites.json`, ensure its build uses the matching URL base and writes into `_site/<slug>`, then commit the pinned submodule revision in this repo.
 
 ## Post Front Matter
 

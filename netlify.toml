@@ -1,0 +1,6 @@
+[build]
+  command = "git submodule update --init --recursive && pnpm run build"
+  publish = "_site"
+
+[build.environment]
+  NODE_VERSION = "22"

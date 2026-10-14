@@ -11,6 +11,13 @@ My labs site is moved [over here](https://github.com/trongthanh/labs.int3ractive
 $ npm install
 $ npm start
 ```
+
+## Independent static sites
+
+Standalone sites live in their own repositories and are included here as Git submodules under `sites/`. `static-sites.json` defines each site's install/build commands; `npm run build` builds Eleventy first, then places each app in `_site/<path>` for the single Netlify deployment. Netlify publishes `_site` as the site root.
+
+Initialize submodules after cloning with `git submodule update --init --recursive`. To publish an app update, check out the desired commit in its submodule and commit the updated submodule pointer in this repository. New apps should use their URL path as the build base (for example, `/city-weather/`) so assets resolve correctly when hosted below the domain root.
+
 ## Post's Front Matter Guide
 
 - `title`: Post title, `h1` of the post page

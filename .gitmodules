@@ -1,3 +1,6 @@
 [submodule "slides"]
 	path = slides
 	url = git@github.com:trongthanh/slides.git
+[submodule "sites/city-weather"]
+	path = sites/city-weather
+	url = https://github.com/trongthanh/city-weather.git

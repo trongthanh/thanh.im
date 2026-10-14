@@ -3,7 +3,7 @@ import globals from "globals";
 
 export default [
 	{
-		ignores: ["slides/", "_site/"],
+		ignores: ["slides/", "sites/", "_site/"],
 	},
 	{
 		languageOptions: {

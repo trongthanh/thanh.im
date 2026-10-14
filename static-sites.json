@@ -1,0 +1,16 @@
+[
+	{
+		"name": "city-weather",
+		"directory": "sites/city-weather",
+		"install": ["npm", "ci"],
+		"build": [
+			"npm",
+			"run",
+			"build",
+			"--",
+			"--base=/city-weather/",
+			"--outDir=../../_site/city-weather",
+			"--emptyOutDir"
+		]
+	}
+]

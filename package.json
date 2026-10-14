@@ -30,7 +30,8 @@
 		"prestart": "rm -rf _site/",
 		"start": "npm run dev",
 		"test": "eslint .",
-		"build": "npm run sass && npm test && eleventy"
+		"build": "npm run sass && npm test && eleventy && npm run build:sites",
+		"build:sites": "node scripts/build-static-sites.mjs"
 	},
 	"repository": {
 		"type": "git",
